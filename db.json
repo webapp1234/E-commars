@@ -1,0 +1,21 @@
+{
+  "users": [],
+  "products": [
+    {
+      "productName": "watch",
+      "price": 2000,
+      "desc": "this is watch",
+      "isActive": true,
+      "id": 1
+    },
+    {
+      "productName": "ring",
+      "price": 2000,
+      "desc": "this is ring",
+      "isActive": true,
+      "id": 2
+    }
+  ],
+  "admin": [],
+  "cart": []
+}

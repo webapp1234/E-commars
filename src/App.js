@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import AdminNav from "./components/admin/header/AdminNav";
+import UserNav from "./components/user/header/UserNav";
+import Dashboard from "./components/admin/pages/Dashboard";
+import Manage from "./components/admin/pages/Manage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  let role = "admin";
+
+  if (role == "user") {
+    return <UserNav />;
+  } else {
+    return (
+      <>
+        <AdminNav />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/manage" element={<Manage />} />
+        </Routes>
+      </>
+    );
+  }
 }
 
 export default App;
